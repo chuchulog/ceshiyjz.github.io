@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="loader.js"></script>
+<script>
+    var loader = new resLoader({
+        resources : [
+            './img/1.png',
+            './img/2.png',
+            './img/3.png',
+            './img/4.png',
+            './img/5.png',
+            './img/6.png',
+            './img/7.png',
+            './img/8.png',
+            './img/9.png',
+            './img/10.png',
+            './img/11.png',
+            './img/12.png',
+            './img/js1.js',
+            './img/three.js',
+            './img/mp3.mp3',
+        ],
+        onStart:function(total){
+            console.log('start:'+total);
+        },
+        onProgress:function(current,total){
+            console.log(current+'/'+total);
+            var percent = current/total*100;
+        },
+        onComplete:function(total){
+            console.log('加载完成')
+        }
+    })
+    loader.start();
+
+</script>
+</html>
